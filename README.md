@@ -1,7 +1,5 @@
 # KemanaKita
 
-[![MohFahmi27](https://circleci.com/gh/MohFahmi27/Identification-of-Herbal-Medicine-Plant-Leaf.svg?style=shield)](https://circleci.com/gh/MohFahmi27/Identification-of-Herbal-Medicine-Plant-Leaf)
-
 <p align="center">
   <img src="https://github.com/perfect-less/KemanaKita/blob/main/bangkit_banner.png">
 </p>
