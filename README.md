@@ -31,4 +31,4 @@ Here is the initial project plan!
 | I Gde Bagus Ngurah Aditya Darma Giri | A7145J1650  | https://github.com/baharma |  |  |
 | Aliya Puspita Ningrum | A2211F1954 | https://github.com/allyapn |  |  |
 | Irfan Sholeh | C2299F2577 | https://github.com/irfansholeh |  |  |
-| Kevin Pramudya  | C2243F2161 | https://github.com/kevinpramudya |  |  |
+| Kevin Pramudya  | C2243F2161 | https://github.com/kevinpramudya | Create VM instance, Installing FlaskApp into VM instance |  |
