@@ -1,9 +1,14 @@
 package com.example.kemanakita.ui.dashboard
 
 import android.Manifest
+import android.app.Activity.RESULT_OK
+import android.content.ContentResolver
+import android.content.Context
 import android.content.Intent
+import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +23,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.kemanakita.databinding.FragmentDashboardBinding
 import com.example.kemanakita.ui.dashboard.kamera.KameraActivity
 import com.example.kemanakita.ui.dashboard.kamera.rotateBitmap
+import com.example.kemanakita.ui.dashboard.kamera.uriToFile
 import java.io.File
 
 class DashboardFragment : Fragment() {
@@ -82,7 +88,11 @@ class DashboardFragment : Fragment() {
     }
 
     private fun startGallery() {
-        Toast.makeText(getActivity(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
+        val intent = Intent()
+        intent.action = ACTION_GET_CONTENT
+        intent.type = "image/*"
+        val chooser = Intent.createChooser(intent, "Choose a Picture")
+        launcherIntentGallery.launch(chooser)
     }
 
     private fun startTakePhoto() {
@@ -112,6 +122,18 @@ class DashboardFragment : Fragment() {
             binding.imageViewScan.setImageBitmap(result)
         }
     }
+
+    private val launcherIntentGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val selectedImg: Uri = result.data?.data as Uri
+            val myFile = getActivity()?.let { uriToFile(selectedImg, it) }
+            binding.imageViewScan.setImageURI(selectedImg)
+        }
+    }
+
+
     companion object {
         const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
