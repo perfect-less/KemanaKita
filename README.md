@@ -20,7 +20,7 @@ Product Description Here.
 ## Capstone Project Team: 
 | Name | Bangkit-ID | Github-Profile | Task |
 | ------ | ------ | ------ | ------ | 
-| Kukuh Iksan Musyahada  | M2002G0058  | https://github.com/KukuhIksanMusyahada | Collecting Dataset, building the model |
+| Kukuh Iksan Musyahada  | M2002G0058  | https://github.com/KukuhIksanMusyahada | Collecting Dataset, building the model, improving the model |
 | Ikhwan Syatricha Hidayatullah  | M2002H0055  | https://github.com/perfect-less | improving the model, build inference |
 | I Gde Bagus Ngurah Aditya Darma Giri | A7145J1650  | https://github.com/baharma |  |
 | Aliya Puspita Ningrum | A2211F1954 |  |  |
