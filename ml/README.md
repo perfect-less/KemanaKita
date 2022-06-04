@@ -1,5 +1,5 @@
 # Machine Learning Section
-This is Machine Learning Section of this repo. You can find our scrapping module, training Notebook and our inference module for deployment. Our dataset can be accessed [here](https://drive.google.com/).
+This is Machine Learning Section of this repo. You can find our scrapping module, training Notebook and our inference module for deployment. Our dataset can be accessed [here](https://drive.google.com/file/d/19X0ENWZypmMXdJn-IlrOX1bNJunByBbw/view?usp=sharing).
 
 We performed transfer learning on already trained `mobilenet_v2` to classify three different places: 
 | Place Name | Label Number |
