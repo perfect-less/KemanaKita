@@ -13,7 +13,7 @@ Here is the initial project plan!
 - Lastly hopefully this application will **cover all the fantastic and heavenly places Indonesia** have to offer it for you! Rest Assured! **we will accompany you to the end of the heavens! Just tell us your destination in KemanaKita!**
 
 ## Project Documents:
-- Project Brief : ```Hyperlink```
+- Project Brief : ```https://drive.google.com/file/d/18RuQciUc7b-gv96tWXTRbp2aMWuz70AE/view?usp=sharing```
 - Final presentation : ```Also Hyperlink```
 
 ## Project Resource: 
