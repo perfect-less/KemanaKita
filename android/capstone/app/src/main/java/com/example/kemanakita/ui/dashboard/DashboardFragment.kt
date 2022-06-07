@@ -2,8 +2,7 @@ package com.example.kemanakita.ui.dashboard
 
 import android.Manifest
 import android.app.Activity.RESULT_OK
-import android.content.ContentValues.TAG
-import android.content.Context
+
 
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
@@ -15,43 +14,40 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.datastore.core.DataStore
-import androidx.datastore.dataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.kemanakita.api.ApiConfig
 import com.example.kemanakita.databinding.FragmentDashboardBinding
-import com.example.kemanakita.preferense.DestinationPreference
-
+import com.example.kemanakita.preferense.Listdetail
 import com.example.kemanakita.preferense.ResponseDestination
-import com.example.kemanakita.preferense.ViewModelFactory
+
 import com.example.kemanakita.ui.dashboard.kamera.KameraActivity
 import com.example.kemanakita.ui.dashboard.kamera.rotateBitmap
 import com.example.kemanakita.ui.dashboard.kamera.uriToFile
+import com.example.kemanakita.ui.detail.DetailActivity
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
+import java.nio.file.Files.size
 
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth")
 class DashboardFragment : Fragment() {
-
+    val listdetail = MutableLiveData<Listdetail>()
     private var getFile: File? = null
     private var _binding: FragmentDashboardBinding? = null
     private lateinit var dashboardViewModel: DashboardViewModel
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -81,8 +77,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val pref = DestinationPreference.getInstance(requireContext().dataStore)
-        dashboardViewModel = ViewModelProvider(this,ViewModelFactory(pref))[DashboardViewModel::class.java]
+
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -116,6 +111,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun startTakePhoto() {
+
         if (getFile != null) {
             val file = getFile as File
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
@@ -124,22 +120,18 @@ class DashboardFragment : Fragment() {
                 file.name,
                 requestImageFile
             )
-            val sevice = ApiConfig().getApiService().uploadImage(imageMultipart)
-            sevice.enqueue(object : Callback<ResponseDestination>{
-                override fun onResponse(
-                    call: Call<ResponseDestination>,
-                    response: Response<ResponseDestination>
-                ) {
+            val service = ApiConfig().getApiService().uploadImage(imageMultipart)
+            service.enqueue(object :Callback<Listdetail>{
+                override fun onResponse(call: Call<Listdetail>, response: Response<Listdetail>) {
                     if (response.isSuccessful){
-                        val Response =response.body()?.destination?.description
-                        Response.let {
-                            dashboardViewModel.saveDescription(it.toString())
-                        }
-                    }
-                }
+                             listdetail.postValue(response.body())
 
-                override fun onFailure(call: Call<ResponseDestination>, t: Throwable) {
-                    Log.d(TAG, "onFailure: ${t.printStackTrace()}")
+                            }
+
+
+                }
+                override fun onFailure(call: Call<Listdetail>, t: Throwable) {
+                    Log.d("failure" , t.message!!)
                 }
             })
 
