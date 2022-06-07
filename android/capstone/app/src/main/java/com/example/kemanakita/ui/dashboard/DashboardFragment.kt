@@ -2,14 +2,16 @@ package com.example.kemanakita.ui.dashboard
 
 import android.Manifest
 import android.app.Activity.RESULT_OK
-import android.content.ContentResolver
+import android.content.ContentValues.TAG
 import android.content.Context
+
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,18 +20,36 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.datastore.core.DataStore
+import androidx.datastore.dataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.kemanakita.api.ApiConfig
 import com.example.kemanakita.databinding.FragmentDashboardBinding
+import com.example.kemanakita.preferense.DestinationPreference
+
+import com.example.kemanakita.preferense.ResponseDestination
+import com.example.kemanakita.preferense.ViewModelFactory
 import com.example.kemanakita.ui.dashboard.kamera.KameraActivity
 import com.example.kemanakita.ui.dashboard.kamera.rotateBitmap
 import com.example.kemanakita.ui.dashboard.kamera.uriToFile
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth")
 class DashboardFragment : Fragment() {
 
+    private var getFile: File? = null
     private var _binding: FragmentDashboardBinding? = null
-
+    private lateinit var dashboardViewModel: DashboardViewModel
     // This property is only valid between onCreateView and
     // onDestroyView.
     override fun onRequestPermissionsResult(
@@ -61,8 +81,8 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val pref = DestinationPreference.getInstance(requireContext().dataStore)
+        dashboardViewModel = ViewModelProvider(this,ViewModelFactory(pref))[DashboardViewModel::class.java]
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -96,7 +116,36 @@ class DashboardFragment : Fragment() {
     }
 
     private fun startTakePhoto() {
-        Toast.makeText(getActivity(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
+        if (getFile != null) {
+            val file = getFile as File
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "imageFile",
+                file.name,
+                requestImageFile
+            )
+            val sevice = ApiConfig().getApiService().uploadImage(imageMultipart)
+            sevice.enqueue(object : Callback<ResponseDestination>{
+                override fun onResponse(
+                    call: Call<ResponseDestination>,
+                    response: Response<ResponseDestination>
+                ) {
+                    if (response.isSuccessful){
+                        val Response =response.body()?.destination?.description
+                        Response.let {
+                            dashboardViewModel.saveDescription(it.toString())
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseDestination>, t: Throwable) {
+                    Log.d(TAG, "onFailure: ${t.printStackTrace()}")
+                }
+            })
+
+        } else {
+            Toast.makeText(getActivity(), "Silakan masukkan berkas gambar terlebih dahulu.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun startCameraX() {
@@ -113,7 +162,7 @@ class DashboardFragment : Fragment() {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
             val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
-
+            getFile = myFile
             val result = rotateBitmap(
                 BitmapFactory.decodeFile(myFile.path),
                 isBackCamera
@@ -129,6 +178,7 @@ class DashboardFragment : Fragment() {
         if (result.resultCode == RESULT_OK) {
             val selectedImg: Uri = result.data?.data as Uri
             val myFile = getActivity()?.let { uriToFile(selectedImg, it) }
+            getFile = myFile
             binding.imageViewScan.setImageURI(selectedImg)
         }
     }

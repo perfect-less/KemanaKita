@@ -13,7 +13,7 @@ Here is the initial project plan!
 - Lastly hopefully this application will **cover all the fantastic and heavenly places Indonesia** have to offer it for you! Rest Assured! **we will accompany you to the end of the heavens! Just tell us your destination in KemanaKita!**
 
 ## Project Documents:
-- Project Brief : ```Hyperlink```
+- Project Brief : ```https://drive.google.com/file/d/18RuQciUc7b-gv96tWXTRbp2aMWuz70AE/view?usp=sharing```
 - Final presentation : ```Also Hyperlink```
 
 ## Project Resource: 
@@ -30,5 +30,5 @@ Here is the initial project plan!
 | Ikhwan Syatricha Hidayatullah  | M2002H0055  | https://github.com/perfect-less | improving the model, build inference | Done |
 | I Gde Bagus Ngurah Aditya Darma Giri | A7145J1650  | https://github.com/baharma |  |  |
 | Aliya Puspita Ningrum | A2211F1954 | https://github.com/allyapn |  |  |
-| Irfan Sholeh | C2299F2577 | https://github.com/irfansholeh |  |  |
-| Kevin Pramudya  | C2243F2161 | https://github.com/kevinpramudya | Create VM instance, Installing FlaskApp into VM instance |  |
+| Irfan Sholeh | C2299F2577 | https://github.com/irfansholeh | Deploying API, Postman API testing | Done |
+| Kevin Pramudya  | C2243F2161 | https://github.com/kevinpramudya | Create VM instance, Installing FlaskApp into VM instance | Done |
