@@ -2,6 +2,7 @@ package com.example.kemanakita.ui.dashboard
 
 import android.Manifest
 import android.app.Activity.RESULT_OK
+import android.content.ContentValues.TAG
 
 
 import android.content.Intent
@@ -30,6 +31,7 @@ import com.example.kemanakita.ui.dashboard.kamera.KameraActivity
 import com.example.kemanakita.ui.dashboard.kamera.rotateBitmap
 import com.example.kemanakita.ui.dashboard.kamera.uriToFile
 import com.example.kemanakita.ui.detail.DetailActivity
+import com.google.gson.Gson
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -42,7 +44,7 @@ import java.nio.file.Files.size
 
 
 class DashboardFragment : Fragment() {
-    val listdetail = MutableLiveData<Listdetail>()
+    val _listory = MutableLiveData<Listdetail>()
     private var getFile: File? = null
     private var _binding: FragmentDashboardBinding? = null
     private lateinit var dashboardViewModel: DashboardViewModel
@@ -121,17 +123,24 @@ class DashboardFragment : Fragment() {
                 requestImageFile
             )
             val service = ApiConfig().getApiService().uploadImage(imageMultipart)
-            service.enqueue(object :Callback<Listdetail>{
-                override fun onResponse(call: Call<Listdetail>, response: Response<Listdetail>) {
-                    if (response.isSuccessful){
-                             listdetail.postValue(response.body())
-
-                            }
-
-
+            service.enqueue(object : Callback<Listdetail>{
+                override fun onResponse(
+                    call: Call<Listdetail>,
+                    response: Response<Listdetail>
+                ) {
+                    if (response.isSuccessful) {
+                        _listory.value = response.body()
+//                        fun bind(data: Listdetail) {
+//
+//                        }
+                        Intent(activity, DetailActivity::class.java).also {
+                            it.putExtra(DetailActivity.EXTRA_USERNAME, Gson().toJson(_listory.value))
+                            startActivity(it)
+                        }
+                    }
                 }
                 override fun onFailure(call: Call<Listdetail>, t: Throwable) {
-                    Log.d("failure" , t.message!!)
+                    Log.e(TAG, "onFailure: ${t.message}")
                 }
             })
 

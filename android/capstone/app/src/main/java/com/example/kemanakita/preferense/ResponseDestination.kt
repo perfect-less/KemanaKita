@@ -13,13 +13,15 @@ data class ResponseDestination(
 @Parcelize
 data class Listdetail(
     @field:SerializedName("address")
-    val address:String?=null,
+    val address: String? = null,
     @field:SerializedName("description")
     val description: String? = null,
     @field:SerializedName("id")
-    val id:Int?=null,
+    val id: String? = null,
     @field:SerializedName("link_map")
-    val link_map:String?=null,
+    val link_map: String? = null,
+    @field:SerializedName("image")
+    val image: String? = null,
     @field:SerializedName("wisata")
-    val wisata :String?=null
+    val wisata : String? = null
 ) : Parcelable
