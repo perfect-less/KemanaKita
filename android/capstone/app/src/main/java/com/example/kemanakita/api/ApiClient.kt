@@ -1,6 +1,6 @@
 package com.example.kemanakita.api
 
-import androidx.viewbinding.BuildConfig.DEBUG
+import com.example.kemanakita.preferense.Listdetail
 import com.example.kemanakita.preferense.ResponseDestination
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -15,10 +15,10 @@ import retrofit2.http.Part
 
 interface ApiService {
     @Multipart
-    @POST("/api")
+    @POST("api/v1/upload")
     fun uploadImage(
         @Part file: MultipartBody.Part,
-    ): Call<ResponseDestination>
+    ): Call<Listdetail>
 }
 class ApiConfig {
     fun getApiService(): ApiService {
@@ -28,7 +28,7 @@ class ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://34.101.151.117")
+            .baseUrl("http://34.101.140.28/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
