@@ -1,13 +1,12 @@
 package com.example.kemanakita.ui.home
 
 
-import android.content.res.Configuration
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kemanakita.R
@@ -15,11 +14,9 @@ import com.example.kemanakita.databinding.FragmentHomeBinding
 import com.example.kemanakita.preferense.ModelListWisata
 
 class HomeFragment : Fragment() {
-
+    private lateinit var rvHeroes: RecyclerView
     private var _binding: FragmentHomeBinding? = null
     private val list = ArrayList<ModelListWisata>()
-    private lateinit var rvwisata: RecyclerView
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,44 +24,35 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        rvwisata = binding.recyclerView
-        rvwisata.setHasFixedSize(true)
-
-list.addAll(listdestination)
-showRecyclerList()
-
+//        list.addAll(listHeroes)
+//        showRecyclerList()
         return root
     }
-    private val listdestination : ArrayList<ModelListWisata>
-    get() {
-        val dataname = resources.getStringArray(R.array.data_name)
-        val datalocation = resources.getStringArray(R.array.data_location)
-        val dataphoto = resources.obtainTypedArray(R.array.data_photo)
-        val listdts =  ArrayList<ModelListWisata>()
-        for (i in dataname.indices){
-            val destetination = ModelListWisata(dataphoto.getResourceId(i, -1),dataname[i],datalocation[i],)
-            listdts.add(destetination)
-        }
-        return listdts
-    }
+//    private val listHeroes: ArrayList<ModelListWisata>
+//        @SuppressLint("Recycle")
+//        get() {
+//            val dataName = resources.getStringArray(R.array.data_name)
+//            val dataDescription = resources.getStringArray(R.array.data_location)
+//            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+//            val listHero = ArrayList<ModelListWisata>()
+//            for (i in dataName.indices) {
+//                val hero = ModelListWisata( dataPhoto.getResourceId(i, -1),dataName[i],dataDescription[i])
+//                listHero.add(hero)
+//            }
+//            return listHero
+//        }
 
-    private fun showRecyclerList(){
-
-        if (requireActivity().applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            rvwisata.layoutManager = GridLayoutManager(getActivity(),1)
-        }else{
-            rvwisata.layoutManager = GridLayoutManager(getActivity(),2)
-        }
-
-        val listwisataadapter = HomeAdapter(list)
-        rvwisata.adapter = listwisataadapter
-    }
+//
+//    private fun showRecyclerList() {
+//        rvHeroes = binding.recyclerView
+//        rvHeroes.setHasFixedSize(true)
+//        rvHeroes.layoutManager = LinearLayoutManager(activity)
+//        val listHeroAdapter = HomeAdapter(list)
+//        rvHeroes.adapter = listHeroAdapter
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

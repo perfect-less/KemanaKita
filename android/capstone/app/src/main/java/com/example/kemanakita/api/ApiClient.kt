@@ -1,7 +1,6 @@
 package com.example.kemanakita.api
 
 import com.example.kemanakita.preferense.Listdetail
-import com.example.kemanakita.preferense.ResponseDestination
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
