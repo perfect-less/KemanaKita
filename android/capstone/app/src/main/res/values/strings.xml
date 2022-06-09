@@ -4,4 +4,25 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="scan">Scan</string>
+    <string name="name">Namawisata</string>
+    <string name="descripsion">Lokasi</string>
+    <string name="cari">coba ambil gambar dan carilah!</string>
+    <string name="hola">Hallo, Selamat Datang</string>
+
+    <string-array name="data_name">
+        <item>Kawah Putih</item>
+        <item>Braga Bandung</item>
+        <item>Monumen Perjuangan</item>
+    </string-array>
+
+    <string-array name="data_location">
+        <item>Ciwidey, Bandung</item>
+        <item>Braga, Bandung</item>
+        <item>Coblong, Bandung</item>
+    </string-array>
+    <string-array name="data_photo">
+        <item>@drawable/kawahputihseratusnews</item>
+        <item>@drawable/bragastreetsigninbandung</item>
+        <item>@drawable/monumenperjuanganrakyatjawabarat</item>
+    </string-array>
 </resources>

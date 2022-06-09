@@ -20,13 +20,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.kemanakita.api.ApiConfig
 import com.example.kemanakita.databinding.FragmentDashboardBinding
 import com.example.kemanakita.preferense.Listdetail
-import com.example.kemanakita.preferense.ResponseDestination
-
 import com.example.kemanakita.ui.dashboard.kamera.KameraActivity
 import com.example.kemanakita.ui.dashboard.kamera.rotateBitmap
 import com.example.kemanakita.ui.dashboard.kamera.uriToFile
@@ -35,19 +32,17 @@ import com.google.gson.Gson
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
-import java.nio.file.Files.size
 
 
 class DashboardFragment : Fragment() {
     val _listory = MutableLiveData<Listdetail>()
     private var getFile: File? = null
     private var _binding: FragmentDashboardBinding? = null
-    private lateinit var dashboardViewModel: DashboardViewModel
+
 
 
     override fun onRequestPermissionsResult(
@@ -74,7 +69,7 @@ class DashboardFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    override fun onCreateView(  
+    override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -100,6 +95,7 @@ class DashboardFragment : Fragment() {
         }
         return root
     }
+
     private fun backToMenu() {
         Toast.makeText(getActivity(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
     }
@@ -123,40 +119,47 @@ class DashboardFragment : Fragment() {
                 requestImageFile
             )
             val service = ApiConfig().getApiService().uploadImage(imageMultipart)
-            service.enqueue(object : Callback<Listdetail>{
+            service.enqueue(object : Callback<Listdetail> {
                 override fun onResponse(
                     call: Call<Listdetail>,
                     response: Response<Listdetail>
                 ) {
                     if (response.isSuccessful) {
                         _listory.value = response.body()
-//                        fun bind(data: Listdetail) {
-//
-//                        }
                         Intent(activity, DetailActivity::class.java).also {
-                            it.putExtra(DetailActivity.EXTRA_USERNAME, Gson().toJson(_listory.value))
+                            it.putExtra(
+                                DetailActivity.EXTRA_USERNAME,
+                                Gson().toJson(_listory.value)
+                            )
                             startActivity(it)
                         }
                     }
                 }
+
                 override fun onFailure(call: Call<Listdetail>, t: Throwable) {
                     Log.e(TAG, "onFailure: ${t.message}")
                 }
             })
 
         } else {
-            Toast.makeText(getActivity(), "Silakan masukkan berkas gambar terlebih dahulu.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                getActivity(),
+                "Silakan masukkan berkas gambar terlebih dahulu.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
     private fun startCameraX() {
-        var intent = Intent(getActivity(),KameraActivity::class.java)
+        var intent = Intent(getActivity(), KameraActivity::class.java)
         launcherIntentCameraX.launch(intent)
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
     private val launcherIntentCameraX = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
