@@ -81,7 +81,7 @@ class DashboardFragment : Fragment() {
         binding.btnKamera.setOnClickListener { startCameraX() }
         binding.btnScanFoto.setOnClickListener { startTakePhoto() }
         binding.btnAddgallry.setOnClickListener { startGallery() }
-        binding.btnBackfoto.setOnClickListener { backToMenu() }
+
 
 
         if (!allPermissionsGranted()) {
@@ -109,7 +109,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun startTakePhoto() {
-
+        showLoading(true)
         if (getFile != null) {
             val file = getFile as File
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
@@ -126,12 +126,14 @@ class DashboardFragment : Fragment() {
                 ) {
                     if (response.isSuccessful) {
                         _listory.value = response.body()
+                        showLoading(false)
                         Intent(activity, DetailActivity::class.java).also {
                             it.putExtra(
                                 DetailActivity.EXTRA_USERNAME,
                                 Gson().toJson(_listory.value)
                             )
                             startActivity(it)
+
                         }
                     }
                 }
@@ -187,7 +189,13 @@ class DashboardFragment : Fragment() {
         }
     }
 
-
+    private fun showLoading(state: Boolean){
+        if(state){
+            binding.progressBar.visibility = View.VISIBLE
+        }else{
+            binding.progressBar.visibility = View.GONE
+        }
+    }
     companion object {
         const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)

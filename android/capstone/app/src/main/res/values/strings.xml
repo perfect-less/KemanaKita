@@ -8,6 +8,12 @@
     <string name="descripsion">Lokasi</string>
     <string name="cari">coba ambil gambar dan carilah!</string>
     <string name="hola">Hallo, Selamat Datang</string>
+    <string name="kamera">Kamera</string>
+    <string name="Favorite">Favorite</string>
+    <string name="alamat">alamatlengkap</string>
+    <string name="Deskripsi">Deskripsi</string>
+    <string name="maps">maps</string>
+    <string name="Namalokasi">Namalokasi</string>
 
     <string-array name="data_name">
         <item>Kawah Putih</item>
