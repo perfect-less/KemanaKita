@@ -29,6 +29,6 @@ Here is the initial project plan!
 | Kukuh Iksan Musyahada  | M2002G0058  | https://github.com/KukuhIksanMusyahada | Collecting Dataset, building the model, improving the model | Done |
 | Ikhwan Syatricha Hidayatullah  | M2002H0055  | https://github.com/perfect-less | improving the model, build inference | Done |
 | I Gde Bagus Ngurah Aditya Darma Giri | A7145J1650  | https://github.com/baharma | create RecyclerView home, create upload image and capture Api response | Done |
-| Aliya Puspita Ningrum | A2211F1954 | https://github.com/allyapn |  |  |
+| Aliya Puspita Ningrum | A2211F1954 | https://github.com/allyapn | Design and improve tools icon | Done |
 | Irfan Sholeh | C2299F2577 | https://github.com/irfansholeh | Deploying API using FLASK, Postman API testing | Done |
 | Kevin Pramudya  | C2243F2161 | https://github.com/kevinpramudya | Create VM instance, Installing FlaskApp into VM instance | Done |
