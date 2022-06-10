@@ -139,11 +139,13 @@ class DashboardFragment : Fragment() {
                 }
 
                 override fun onFailure(call: Call<Listdetail>, t: Throwable) {
+                    showLoading(false)
                     Log.e(TAG, "onFailure: ${t.message}")
                 }
             })
 
         } else {
+            showLoading(false)
             Toast.makeText(
                 getActivity(),
                 "Silakan masukkan berkas gambar terlebih dahulu.",
