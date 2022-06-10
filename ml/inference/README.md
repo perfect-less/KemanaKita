@@ -17,4 +17,4 @@ if you call run method without any parameters
 ```
 inference.run()
 ```
-it will run as if you run ith with the first method.
+it will run as if you run it with the first method.
