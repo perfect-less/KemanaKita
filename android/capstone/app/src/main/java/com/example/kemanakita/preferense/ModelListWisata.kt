@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ModelListWisata(
-    var imageList:Int,
     var nameWst:String,
+    var imageList:Int,
     var location:String
 ): Parcelable

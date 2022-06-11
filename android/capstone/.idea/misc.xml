@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_detail.xml" value="0.34603501544799176" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_kamera.xml" value="0.1" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_home.xml" value="0.14" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_notifications.xml" value="0.18802083333333333" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/item_rows_favorit.xml" value="0.33" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/item_rows_list.xml" value="0.30576070901033975" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/tes.xml" value="0.33" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/test.xml" value="0.18" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

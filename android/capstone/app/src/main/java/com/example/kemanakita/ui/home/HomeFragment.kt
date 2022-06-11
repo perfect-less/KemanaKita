@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kemanakita.R
@@ -25,35 +26,32 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-//        list.addAll(listHeroes)
-//        showRecyclerList()
-        return root
+        list.clear()
+        list.addAll(getwisata)
+        showCardView()
+        return binding.root
     }
-//    private val listHeroes: ArrayList<ModelListWisata>
-//        @SuppressLint("Recycle")
-//        get() {
-//            val dataName = resources.getStringArray(R.array.data_name)
-//            val dataDescription = resources.getStringArray(R.array.data_location)
-//            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
-//            val listHero = ArrayList<ModelListWisata>()
-//            for (i in dataName.indices) {
-//                val hero = ModelListWisata( dataPhoto.getResourceId(i, -1),dataName[i],dataDescription[i])
-//                listHero.add(hero)
-//            }
-//            return listHero
-//        }
+    private val getwisata: ArrayList<ModelListWisata>
+        @SuppressLint("Recycle")
+        get() {
+            val dataName = resources.getStringArray(R.array.data_name)
+            val dataDescription = resources.getStringArray(R.array.data_location)
+            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+            val listHero = ArrayList<ModelListWisata>()
+            listHero.clear()
+            for (i in dataName.indices) {
+                val hero = ModelListWisata(dataName[i],dataPhoto.getResourceId(i, -1),dataDescription[i])
+                listHero.add(hero)
 
-//
-//    private fun showRecyclerList() {
-//        rvHeroes = binding.recyclerView
-//        rvHeroes.setHasFixedSize(true)
-//        rvHeroes.layoutManager = LinearLayoutManager(activity)
-//        val listHeroAdapter = HomeAdapter(list)
-//        rvHeroes.adapter = listHeroAdapter
-//    }
-
+            }
+            return listHero
+        }
+    private fun showCardView() {
+        binding.recyclerKita.setHasFixedSize(true)
+        binding.recyclerKita.layoutManager = GridLayoutManager(activity,2)
+        val cardViewUserAdapter = HomeAdapter(list)
+        binding.recyclerKita.adapter = cardViewUserAdapter
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

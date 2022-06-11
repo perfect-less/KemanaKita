@@ -1,315 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg_home"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="185dp"
+            android:layout_height="107dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/transparanlogo" />
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="0dp"
+            app:cardCornerRadius="25dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <androidx.cardview.widget.CardView
+                app:cardCornerRadius="25dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_query"
+                    app:cardCornerRadius="25dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="26dp"
-                    app:cardElevation="3dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Hallo, Selamat Datang"
-                                android:textColor="#009688"
-                                android:textSize="24sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="coba ambil gambar dan carilah!"
-                                android:textColor="#009688"
-                                android:textSize="16sp" />
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                // Sebaris, 2 Card
-
+                    android:layout_height="match_parent"
+                    android:hint="@string/seacrh"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:id="@+id/btn_seacrh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_baseline_search_24"
+                tools:ignore="RtlHardcoded" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="484dp"
+            android:background="@color/green_700"
+            app:cardCornerRadius="100dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            app:layout_constraintVertical_bias="1.0" >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
                 <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Untuk Anda"
-                    android:textColor="#FFFCFC"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/untukanda"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.035" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_kita"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    // Card
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="10dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:cardBackgroundColor="#D9D9D9"
-                            app:cardCornerRadius="25dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    app:cardCornerRadius="10dp">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="130dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/kawah" />
-                                </androidx.cardview.widget.CardView>
-
-
-                                <TextView
-                                    android:layout_width="148dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="0dp"
-                                    android:text="Kawah Putih"
-                                    android:textColor="@color/black"
-                                    android:textSize="20sp" />
-
-                                <TextView
-                                    android:layout_width="167dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Ciwidey, Bandung"
-                                    android:textColor="@color/black"
-                                    android:textSize="13sp" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="10dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:cardBackgroundColor="#D9D9D9"
-                            app:cardCornerRadius="25dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    app:cardCornerRadius="10dp">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="130dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/braga" />
-                                </androidx.cardview.widget.CardView>
-
-
-                                <TextView
-                                    android:layout_width="148dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="0dp"
-                                    android:text="Jalan Braga"
-                                    android:textColor="@color/black"
-                                    android:textSize="20sp" />
-
-                                <TextView
-                                    android:layout_width="167dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Jalan Braga, Bandung"
-                                    android:textColor="@color/black"
-                                    android:textSize="13sp" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </FrameLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    // Card
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="10dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:cardBackgroundColor="#D9D9D9"
-                            app:cardCornerRadius="25dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    app:cardCornerRadius="10dp">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="130dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/sate" />
-                                </androidx.cardview.widget.CardView>
-
-
-                                <TextView
-                                    android:layout_width="148dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="0dp"
-                                    android:text="Gedung Sate"
-                                    android:textColor="@color/black"
-                                    android:textSize="20sp" />
-
-                                <TextView
-                                    android:layout_width="167dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Citarum, Bandung"
-                                    android:textColor="@color/black"
-                                    android:textSize="13sp" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="10dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:cardBackgroundColor="#D9D9D9"
-                            app:cardCornerRadius="25dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    app:cardCornerRadius="10dp">
-
-                                    <ImageView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="130dp"
-                                        android:scaleType="fitXY"
-                                        android:src="@drawable/kawah" />
-                                </androidx.cardview.widget.CardView>
-
-
-                                <TextView
-                                    android:layout_width="148dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="0dp"
-                                    android:text="Kawah Putih"
-                                    android:textColor="@color/black"
-                                    android:textSize="20sp" />
-
-                                <TextView
-                                    android:layout_width="167dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Ciwidey, Bandung"
-                                    android:textColor="@color/black"
-                                    android:textSize="13sp" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </FrameLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </ScrollView>
-
-
-
-
+                    android:layout_height="419dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:listitem="@layout/item_rows_list"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
