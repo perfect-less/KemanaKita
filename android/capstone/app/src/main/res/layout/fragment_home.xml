@@ -12,17 +12,18 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="294dp"
-            android:layout_height="106dp"
+            android:layout_width="109dp"
+            android:layout_height="96dp"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="160dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/transparanlogo" />
+            app:srcCompat="@drawable/kemanakitapngfig" />
+
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="0dp"
@@ -49,6 +50,7 @@
                     app:cardCornerRadius="25dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/farrolight"
                     android:hint="@string/seacrh"
                     android:inputType="text"
                     android:maxLines="1" />
@@ -81,7 +83,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/farrobold"
                     android:text="@string/untukanda"
                     android:textColor="@color/white"
                     android:textSize="20sp"

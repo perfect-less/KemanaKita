@@ -16,16 +16,13 @@ class SplascreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplascreenBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_splascreen)
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-        Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
+        setContentView(binding.root)
+
+        binding.button.setOnClickListener {
+            Intent(this@SplascreenActivity,MainActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
 }

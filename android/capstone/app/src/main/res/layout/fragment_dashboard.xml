@@ -35,7 +35,7 @@
                     android:layout_marginTop="42dp"
                     android:layout_marginEnd="38dp"
                     android:layout_marginBottom="39dp"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/farrobold"
                     android:text="@string/Scan"
                     android:textColor="@color/white"
                     android:textSize="24sp"

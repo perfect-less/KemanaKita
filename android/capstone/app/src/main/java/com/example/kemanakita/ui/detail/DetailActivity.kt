@@ -15,8 +15,9 @@ import com.example.kemanakita.preferense.Listdetail
 import com.google.gson.Gson
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "auth")
+
 class DetailActivity : AppCompatActivity() {
-    private var _binding : ActivityDetailBinding? =null
+    private var _binding: ActivityDetailBinding? = null
     private val binding get() = _binding!!
     private var listdetail: Listdetail? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,10 +32,10 @@ class DetailActivity : AppCompatActivity() {
         binding.apply {
             addresDetail.text = listdetail?.address
             descriptionDetail.text = listdetail?.description
-            linkMapDetail.text= listdetail?.link_map
+            linkMapDetail.text = listdetail?.link_map
             image.let {
                 Glide.with(this@DetailActivity)
-                    .load(listdetail?.image?: "")
+                    .load(listdetail?.image ?: "")
                     .placeholder(R.drawable.ic_baseline_cameraswitch_24)
                     .error(R.drawable.ic_baseline_cameraswitch_24)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -45,7 +46,8 @@ class DetailActivity : AppCompatActivity() {
         }
 
     }
-    companion object{
+
+    companion object {
         const val EXTRA_USERNAME = "extra_username"
     }
 }

@@ -37,20 +37,20 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
                 android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/addres_detail"
-
+                    android:font="@font/farromedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/farromedium"
+                    android:fontFamily="sans-serif-black"
                     android:text="@string/alamat"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+
                     app:layout_constraintHorizontal_bias="0.201"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/wisata_detail"
@@ -62,7 +62,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/Deskripsi"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/farrolight"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -98,10 +97,10 @@
 
                 <TextView
                     android:id="@+id/wisata_detail"
-
+                    android:font="@font/farrobold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/farrobold"
+                    android:fontFamily="sans-serif-black"
                     android:text="@string/Namalokasi"
                     android:textColor="@color/white"
                     android:textSize="24sp"

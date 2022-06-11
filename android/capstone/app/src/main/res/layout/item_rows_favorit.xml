@@ -53,11 +53,11 @@
                 android:layout_height="43dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.062"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/image_favorite"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.88"
-                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                app:layout_constraintVertical_bias="0.852"
+                app:srcCompat="@drawable/ic_baseline_location_on_green" />
 
             <TextView
                 android:id="@+id/favorite_item_title"
@@ -66,11 +66,12 @@
                 android:layout_marginEnd="68dp"
                 android:layout_toEndOf="@+id/location_image"
                 android:gravity="start"
+                android:textColor="@color/green_700"
+                android:fontFamily="@font/farromedium"
                 android:text="@string/name"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:transitionName="name"
-
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -80,11 +81,13 @@
 
             <TextView
                 android:id="@+id/favorite_descripsi"
+                android:textColor="@color/green_700"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/descripsion"
                 android:textSize="14sp"
+                android:fontFamily="@font/farrolight"
                 android:transitionName="description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.064"

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,19 +29,21 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         val notificationsViewModel =
             ViewModelProvider(this).get(NotificationsViewModel::class.java)
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-list.clear()
+        list.clear()
         list.addAll(getwisata)
         showCardView()
 
 
         return root
     }
+
     private val getwisata: ArrayList<ModelListWisata>
         @SuppressLint("Recycle")
         get() {
@@ -50,9 +53,9 @@ list.clear()
             val listHero = ArrayList<ModelListWisata>()
             listHero.clear()
             for (i in dataName.indices) {
-                val hero = ModelListWisata(dataName[i],dataPhoto.getResourceId(i, -1),dataDescription[i])
+                val hero =
+                    ModelListWisata(dataName[i], dataPhoto.getResourceId(i, -1), dataDescription[i])
                 listHero.add(hero)
-
             }
             return listHero
         }

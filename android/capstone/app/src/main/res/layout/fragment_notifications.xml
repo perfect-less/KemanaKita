@@ -29,7 +29,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/farrobold"
                     android:text="@string/Favorite"
                     android:textColor="@color/white"
                     android:textSize="24sp"
@@ -52,7 +52,7 @@
             app:layout_constraintStart_toEndOf="@+id/frameLayout2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/transparanlogo" />
+            app:srcCompat="@drawable/kemanakitapngfig" />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:id="@+id/recycler_vie_favorite"

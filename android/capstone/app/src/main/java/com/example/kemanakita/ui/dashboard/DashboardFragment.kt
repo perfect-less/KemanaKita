@@ -1,10 +1,9 @@
 package com.example.kemanakita.ui.dashboard
 
+
 import android.Manifest
 import android.app.Activity.RESULT_OK
 import android.content.ContentValues.TAG
-
-
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
 import android.content.pm.PackageManager
@@ -17,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -42,7 +42,6 @@ class DashboardFragment : Fragment() {
     val _listory = MutableLiveData<Listdetail>()
     private var getFile: File? = null
     private var _binding: FragmentDashboardBinding? = null
-
 
 
     override fun onRequestPermissionsResult(
@@ -74,7 +73,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -94,10 +93,6 @@ class DashboardFragment : Fragment() {
             }
         }
         return root
-    }
-
-    private fun backToMenu() {
-        Toast.makeText(getActivity(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
     }
 
     private fun startGallery() {
@@ -191,13 +186,14 @@ class DashboardFragment : Fragment() {
         }
     }
 
-    private fun showLoading(state: Boolean){
-        if(state){
+    private fun showLoading(state: Boolean) {
+        if (state) {
             binding.progressBar.visibility = View.VISIBLE
-        }else{
+        } else {
             binding.progressBar.visibility = View.GONE
         }
     }
+
     companion object {
         const val CAMERA_X_RESULT = 200
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
