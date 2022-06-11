@@ -3,14 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_detail.xml" value="0.34603501544799176" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/backroundlike.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/bulat.xml" value="0.2025" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_bookmark_24.xml" value="0.3175" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_cameraswitch_24.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_document_scanner_24.xml" value="0.2025" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.2895" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_favorite_brow.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_favorite_red.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.2025" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_image_search_24.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_location_on_white.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3675" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/kotak.xml" value="0.2825" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/menu_detail.xml" value="0.2895" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/drawable/radius_pencarian.xml" value="0.2025" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_detail.xml" value="0.5" />
         <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_kamera.xml" value="0.1" />
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_home.xml" value="0.14" />
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_notifications.xml" value="0.18802083333333333" />
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/item_rows_favorit.xml" value="0.33" />
-        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/item_rows_list.xml" value="0.30576070901033975" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/activity_splascreen.xml" value="0.278125" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_dashboard.xml" value="0.18" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/item_rows_favorit.xml" value="0.25" />
+        <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/item_rows_list.xml" value="0.45937961595273263" />
         <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/tes.xml" value="0.33" />
         <entry key="..\:/file git/New folder/KemanaKita/android/capstone/app/src/main/res/layout/test.xml" value="0.18" />
       </map>

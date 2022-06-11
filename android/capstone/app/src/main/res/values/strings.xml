@@ -16,6 +16,7 @@
     <string name="Namalokasi">Namalokasi</string>
     <string name="seacrh">Mau Kemana Sekarang</string>
     <string name="untukanda">Untuk Anda</string>
+    <string name="Scan">Scan</string>
 
     <string-array name="data_name">
         <item>Kawah Putih</item>

@@ -9,6 +9,7 @@
     android:orientation="vertical">
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_item_note"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="4dp"
@@ -18,11 +19,23 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/relativeLayout"
+            android:background="@color/green_700"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
+            <ToggleButton
+                android:id="@+id/toggle_favorite"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="@drawable/ic_baseline_favorite_red"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textOff=""
+                android:textOn=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/person_photo"
@@ -42,7 +55,7 @@
                 android:layout_marginTop="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/person_photo"
-                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                app:srcCompat="@drawable/ic_baseline_location_on_white" />
 
             <TextView
                 android:id="@+id/tv_item_title"
@@ -50,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/location_image"
                 android:gravity="start"
+                android:textColor="@color/white"
                 android:text="@string/name"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -65,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/descripsion"
                 android:textSize="14sp"
+                android:textColor="@color/white"
                 android:transitionName="description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

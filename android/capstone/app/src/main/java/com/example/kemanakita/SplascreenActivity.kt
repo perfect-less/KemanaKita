@@ -26,19 +26,6 @@ class SplascreenActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 3000)
-        playAnimation()
+    }
 
-    }
-    private fun playAnimation() {
-        ObjectAnimator.ofFloat(binding.awan1, View.TRANSLATION_X, -30f, 30f).apply {
-            duration = 6000
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }.start()
-        ObjectAnimator.ofFloat(binding.awan2, View.TRANSLATION_X, -30f, 30f).apply {
-            duration = 6000
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }.start()
-    }
 }
