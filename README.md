@@ -1,7 +1,7 @@
 # KemanaKita
 
 <p align="center">
-  <img src="https://github.com/perfect-less/KemanaKita/blob/main/bangkit_banner.png">
+  <img src="https://github.com/perfect-less/KemanaKita/blob/main/app_ui.jpeg">
 </p>
 
 In this project we tried to make **exploring** and **travelling** the heavens in Indonesia much more **fun** and **enjoyable**. We aim to give you **best tour guide** in your phone!. We will develop this project in stages!  
@@ -14,6 +14,9 @@ Here is the initial project plan!
 
 ## Installation
 Apk file for app installation can be found on our latest release [here](https://github.com/perfect-less/KemanaKita/releases/latest), under the [releases](https://github.com/perfect-less/KemanaKita/releases) section. Please beware that this app require permission to open gallery and also require Android version Lollipop 5.0 or above.
+
+## App Demo
+![Alt Text](https://github.com/perfect-less/KemanaKita/blob/main/app_demo.gif)
 
 ## Project Documents:
 - Project Brief : ```https://drive.google.com/file/d/18RuQciUc7b-gv96tWXTRbp2aMWuz70AE/view?usp=sharing```
