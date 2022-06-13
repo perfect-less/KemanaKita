@@ -20,20 +20,14 @@ Apk file for app installation can be found on our latest release [here](https://
 
 ## Project Documents:
 - Project Brief : ```https://drive.google.com/file/d/18RuQciUc7b-gv96tWXTRbp2aMWuz70AE/view?usp=sharing```
-- Final presentation : ```Also Hyperlink```
-
-## Project Resource: 
-- Paper Reference: 
-    1. ```Contoh paper 1```
-    2. ```Contoh paper 2```
-    3. ```dst```
+- Final presentation : [https://www.canva.com/design/DAFDH7Jm6jg/35N1glM3c1oVEksS8WNgFw/view?utm_content=DAFDH7Jm6jg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAFDH7Jm6jg/35N1glM3c1oVEksS8WNgFw/view?utm_content=DAFDH7Jm6jg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
     
 
 ## Capstone Project Team: 
 | Name | Bangkit-ID | Github-Profile | Task | Progress On Task |
 | ------ | ------ | ------ | ------ | ------ |
 | Kukuh Iksan Musyahada  | M2002G0058  | https://github.com/KukuhIksanMusyahada | Collecting Dataset, building the model, improving the model | Done |
-| Ikhwan Syatricha Hidayatullah  | M2002H0055  | https://github.com/perfect-less | improving the model, build inference | Done |
+| Ikhwan Syatricha Hidayatullah  | M2002H0055  | https://github.com/perfect-less | Improving the model, Build inference module for deployment | Done |
 | I Gde Bagus Ngurah Aditya Darma Giri | A7145J1650  | https://github.com/baharma | create RecyclerView home, create upload image and capture Api response | Done |
 | Aliya Puspita Ningrum | A2211F1954 | https://github.com/allyapn | Design and improve tools icon | Done |
 | Irfan Sholeh | C2299F2577 | https://github.com/irfansholeh | Deploying API using FLASK, Postman API testing | Done |
