@@ -19,7 +19,7 @@ Apk file for app installation can be found on our latest release [here](https://
 ![Alt Text](https://github.com/perfect-less/KemanaKita/blob/main/app_demo.gif)
 
 ## Project Documents:
-- Project Brief : ```https://drive.google.com/file/d/18RuQciUc7b-gv96tWXTRbp2aMWuz70AE/view?usp=sharing```
+- Project Brief : [https://docs.google.com/document/d/1QUAWh6n-NVDhZKasQrm7BxKJSpVN7jeT-Z00PNQOQbk/edit?usp=sharing](https://docs.google.com/document/d/1QUAWh6n-NVDhZKasQrm7BxKJSpVN7jeT-Z00PNQOQbk/edit?usp=sharing)
 - Final presentation : [https://www.canva.com/design/DAFDH7Jm6jg/35N1glM3c1oVEksS8WNgFw/view?utm_content=DAFDH7Jm6jg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAFDH7Jm6jg/35N1glM3c1oVEksS8WNgFw/view?utm_content=DAFDH7Jm6jg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
     
 
