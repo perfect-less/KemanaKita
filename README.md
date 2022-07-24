@@ -20,7 +20,7 @@ Apk file for app installation can be found on our latest release [here](https://
 
 ## Project Documents:
 - Project Brief : [https://docs.google.com/document/d/1QUAWh6n-NVDhZKasQrm7BxKJSpVN7jeT-Z00PNQOQbk/edit?usp=sharing](https://docs.google.com/document/d/1QUAWh6n-NVDhZKasQrm7BxKJSpVN7jeT-Z00PNQOQbk/edit?usp=sharing)
-- Final presentation : [https://www.canva.com/design/DAFDH7Jm6jg/35N1glM3c1oVEksS8WNgFw/view?utm_content=DAFDH7Jm6jg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAFDH7Jm6jg/35N1glM3c1oVEksS8WNgFw/view?utm_content=DAFDH7Jm6jg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- Final presentation : [Product Presentation.pptx](https://github.com/perfect-less/KemanaKita/raw/main/Product%20Presentation.pptx)
     
 
 ## Capstone Project Team: 
